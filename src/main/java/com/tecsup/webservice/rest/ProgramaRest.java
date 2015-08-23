@@ -64,10 +64,9 @@ public class ProgramaRest {
 
     @ResponseBody
     @RequestMapping(value = "programa/save",
-            consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE,
             method = RequestMethod.POST, produces =
             MediaType.APPLICATION_JSON_VALUE)
-    public Map<String, Object> insertar(@RequestParam("programa") Programa programa) {
+    public Map<String, Object> insertar(Programa programa) {
         System.out.println("Dentro de insertar: " + programa.getNombre());
         Map<String, Object> resultado = new HashMap();
         try {
@@ -84,7 +83,7 @@ public class ProgramaRest {
     @RequestMapping(value = "programa/save",
             method = RequestMethod.PUT, produces =
             MediaType.APPLICATION_JSON_VALUE)
-    public Map<String, Object> actualizar(@RequestParam("programa") Programa programa) {
+    public Map<String, Object> actualizar(Programa programa) {
         System.out.println("Dentro de actualizar: " + programa.getNombre());
         Map<String, Object> resultado = new HashMap();
         try {
